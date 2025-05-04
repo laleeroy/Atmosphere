@@ -714,6 +714,11 @@ namespace ams::nxboot {
                     AddPatch(fs_meta, 0x021578, NoNcaHeaderSignatureCheckPatch0, sizeof(NoNcaHeaderSignatureCheckPatch0));
                     AddPatch(fs_meta, 0x0746A0, NoNcaHeaderSignatureCheckPatch1, sizeof(NoNcaHeaderSignatureCheckPatch1));
                     break;
+                case FsVersion_20_0_0:
+                case FsVersion_20_0_0_Exfat:
+                    AddPatch(fs_meta, 0x023C88, NoNcaHeaderSignatureCheckPatch0, sizeof(NoNcaHeaderSignatureCheckPatch0));
+                    AddPatch(fs_meta, 0x07A880, NoNcaHeaderSignatureCheckPatch1, sizeof(NoNcaHeaderSignatureCheckPatch1));
+                    break;
                 default:
                     break;
             }
